@@ -10,9 +10,9 @@ const App = () => (
 
 const GroceryList = (props) => (
   <ul>
-      {props.items.map((item) => (
-        <GroceryListItem item={item}/>
-      ))}
+    {props.items.map((item) => (
+      <GroceryListItem item={item}/>
+    ))}
   </ul>
 );
 
@@ -25,10 +25,10 @@ const GroceryListItem = (props) => {
   };
 
   return (
-    <li style={style} onClick={() => setIsDone(!isDone)} onMouseEnter={() => setIsHover(!isHover)} onMouseLeave={() => setIsHover(!isHover)}>
-      {props.item}
-    </li>
+  <li style={style} onClick={() => setIsDone(!isDone)} onMouseEnter={() => setIsHover(!isHover)} onMouseLeave={() => setIsHover(!isHover)}>
+    {props.item}
+  </li>
   );
-};
+}
 
 ReactDOM.render(<App />, document.getElementById('app'))

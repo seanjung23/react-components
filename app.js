@@ -1,17 +1,17 @@
 // TODO
-const {useState} = React;
+const { useState } = React;
 
 const App = () => (
   <div>
     <h2>My Todo List</h2>
-    <GroceryList items={['Apples', 'Bananas', 'Cherries']}/>
+    <GroceryList items={['Apples', 'Bananas', 'Cherries']} />
   </div>
 );
 
 const GroceryList = (props) => (
   <ul>
     {props.items.map((item) => (
-      <GroceryListItem item={item}/>
+      <GroceryListItem item={item} />
     ))}
   </ul>
 );
@@ -21,14 +21,19 @@ const GroceryListItem = (props) => {
   const [isHover, setIsHover] = useState(false);
   const style = {
     textDecoration: isDone ? 'line-through' : 'none',
-    fontWeight: isHover ? 'bold' : 'normal'
+    fontWeight: isHover ? 'bold' : 'normal',
   };
 
   return (
-  <li style={style} onClick={() => setIsDone(!isDone)} onMouseEnter={() => setIsHover(!isHover)} onMouseLeave={() => setIsHover(!isHover)}>
-    {props.item}
-  </li>
+    <li
+      style={style}
+      onClick={() => setIsDone(!isDone)}
+      onMouseEnter={() => setIsHover(!isHover)}
+      onMouseLeave={() => setIsHover(!isHover)}
+    >
+      {props.item}
+    </li>
   );
-}
+};
 
-ReactDOM.render(<App />, document.getElementById('app'))
+ReactDOM.render(<App />, document.getElementById('app'));
